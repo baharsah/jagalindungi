@@ -20,11 +20,11 @@ jobs:
       - restore_cache:
           name: Restore Node Modules Cache
           keys:
-            - yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
+            - yarn-modules-{{ checksum "jagalindungi-front/yarn.lock" }}
       - run: cd jagalindungi-front && ls node_modules || yarn install --frozen-lockfile
       - save_cache:
           name: Save Node Modules Cache
-          key: yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
+          key: yarn-modules-{{ checksum "jagalindungi-front/yarn.lock" }}
           paths:
             - node_modules
       - run: cd jagalindungi-front && yarn build
