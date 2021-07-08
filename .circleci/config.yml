@@ -52,7 +52,7 @@ jobs:
           keys:
             - yarn-modules-{{ checksum "yarn.lock" }}
       - restore_cache:
-          key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/build.gradle" }}
+          key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-front/android/build.gradle" }}
       - run:
           name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
           command: sudo chmod +x jagalindungi-front/android/gradlew
