@@ -27,9 +27,9 @@ jobs:
           key: yarn-modules-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - run: yarn build
-      - run: npx cap add android
-      - run: npx cap sync
+      - run: cd jagalindungi-front && yarn build
+      - run: cd jagalindungi-front && npx cap add android
+      - run:  cd jagalindungi-front && npx cap sync
       - persist_to_workspace:
           root: android
           paths:
