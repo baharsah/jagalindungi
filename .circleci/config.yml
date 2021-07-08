@@ -44,6 +44,9 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: jagalindungi-front/android
+      - run:
+          name: Check working_directory
+          command: ls
       - restore_cache:
           name: Restore Node Modules Cache
           keys:
