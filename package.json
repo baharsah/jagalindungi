@@ -1,0 +1,11 @@
+{
+  "name": "jagalindungi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/baharsah/jagalindungi",
+  "author": "Baharsah",
+  "license": "MIT",
+  "dependencies": {
+    "@ionic/cli": "^6.16.3"
+  }
+}
