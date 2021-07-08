@@ -18,4 +18,8 @@ Built from Ionic React Using Capacitor
 1. Run `docker-compose up`
 2. Run `Docker Interactive Shell`
 
+### Staff
+
+- [Baharsah](https://github.com/baharsah)
+
 
