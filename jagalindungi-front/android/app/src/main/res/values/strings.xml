@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">jagalindungi</string>
+    <string name="title_activity_main">jagalindungi</string>
+    <string name="package_name">co.baharsah.jagalindungi</string>
+    <string name="custom_url_scheme">co.baharsah.jagalindungi</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+	"appId": "co.baharsah.jagalindungi",
+	"appName": "jagalindungi",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
