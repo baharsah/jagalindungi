@@ -62,7 +62,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "jagalindungi-frontend/android/build.gradle" }}-{{ checksum  "jagalindungi-frontend/android/build.gradle" }}
+          key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-frontend/android/build.gradle" }}
       - run:
           name: Copy configuration files
           command: cp config/Android/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
