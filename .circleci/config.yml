@@ -31,9 +31,9 @@ jobs:
       - run: cd jagalindungi-front && npx cap add android
       - run:  cd jagalindungi-front && npx cap sync
       - persist_to_workspace:
-          root: android
+          root: jagalindungi-front/android
           paths:
-            - ./jagalindungi-front/*
+            - ./*
   build_android:
     docker:
       - image: circleci/android:api-29-node
