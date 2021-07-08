@@ -55,10 +55,10 @@ jobs:
           key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/build.gradle" }}
       - run:
           name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
-          command: sudo chmod +x ./android/gradlew
+          command: sudo chmod +x jagalindungi-front/android/gradlew
       - run:
           name: Download Dependencies
-          command: cd android && ./gradlew androidDependencies --debug
+          command: cd jagalindungi-front/android && ./gradlew androidDependencies --debug
       - save_cache:
           paths:
             - ~/.gradle
@@ -69,24 +69,24 @@ jobs:
       - run: # https://developer.android.com/studio/build/building-cmdline This creates an APK named module_name-debug.apk in project_name/module_name/build/outputs/apk/
           name: Build debug APK and release APK
           command: |
-            cd android
+            cd jagalindungi-front/android
             ./gradlew :app:assembleDebug
             ./gradlew :app:assembleRelease
             ./gradlew :app:assembleDebugAndroidTest
       - run:
           name: Run Tests
-          command: cd android && ./gradlew lint test
+          command: cd jagalindungi-front/android && ./gradlew lint test
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: android/app/build/reports
+          path: jagalindungi-front/android/app/build/reports
           destination: reports
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: android/app/build/outputs/apk
+          path: jagalindungi-front/android/app/build/outputs/apk
       # - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
       #     path: android/app/src/main/assets/public
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: android/app/build/test-results
+          path: jagalindungi-front/android/app/build/test-results
       - persist_to_workspace:
-          root: android/app/build/outputs
+          root: jagalindungi-front/android/app/build/outputs
           paths:
             - ./apk/*
 
@@ -95,7 +95,7 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - attach_workspace:
-          at: ./android
+          at: jagalindungi-front/android
       - run:
           name: 'Publish Release on GitHub'
           command: |
