@@ -50,7 +50,7 @@ jobs:
       - restore_cache:
           name: Restore Node Modules Cache
           keys:
-            - yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
+            - yarn-modules-{{ checksum "jagalindungi-front/yarn.lock" }}
       - restore_cache:
           key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-front/android/build.gradle" }}
       - run:
@@ -62,7 +62,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-frontend/android/build.gradle" }}
+          key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-front/android/build.gradle" }}
       - run:
           name: Copy configuration files
           command: cp config/Android/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
