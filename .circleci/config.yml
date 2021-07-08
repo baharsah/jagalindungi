@@ -20,11 +20,11 @@ jobs:
       - restore_cache:
           name: Restore Node Modules Cache
           keys:
-            - yarn-modules-{{ checksum "yarn.lock" }}
+            - yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
       - run: cd jagalindungi-front && ls node_modules || yarn install --frozen-lockfile
       - save_cache:
           name: Save Node Modules Cache
-          key: yarn-modules-{{ checksum "yarn.lock" }}
+          key: yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
           paths:
             - node_modules
       - run: cd jagalindungi-front && yarn build
@@ -50,7 +50,7 @@ jobs:
       - restore_cache:
           name: Restore Node Modules Cache
           keys:
-            - yarn-modules-{{ checksum "yarn.lock" }}
+            - yarn-modules-{{ checksum "jagalindungi-frontend/yarn.lock" }}
       - restore_cache:
           key: jars-{{ checksum "jagalindungi-front/android/build.gradle" }}-{{ checksum  "jagalindungi-front/android/build.gradle" }}
       - run:
@@ -62,7 +62,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/build.gradle" }}
+          key: jars-{{ checksum "jagalindungi-frontend/android/build.gradle" }}-{{ checksum  "jagalindungi-frontend/android/build.gradle" }}
       - run:
           name: Copy configuration files
           command: cp config/Android/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
